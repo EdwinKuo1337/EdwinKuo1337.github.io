@@ -1,0 +1,309 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url("rwd.css");
+
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background:rgba(242, 237, 232, 1);
+}
+
+/* header */
+header{
+	position:relative;
+	padding:15px 0px;
+	color:rgba(255, 255, 255, 1);
+	background:rgb(255, 226, 154);
+	text-align:center;
+}
+
+.ficon{
+	font-size:60px;
+	padding:5px;
+}
+
+.menu{
+	position:absolute;
+	right:20px;
+	top:20px;
+	width:30px;
+	height:30px;
+	font-size:30px;
+	display:block;
+}
+
+.menu:hover{
+	cursor:pointer;
+}
+
+nav{
+	width:100%;
+	margin:auto;
+	text-align:center;
+	font-size:18px;
+	position: -webkit-sticky;
+  	position: sticky;
+  	top: 0;
+}
+
+nav ul{
+	list-style: none;
+}
+
+nav li{
+	position:relative;
+	display: block;
+}
+
+.menu{
+	position:absolute;
+	right:20px;
+	top:20px;
+	width:30px;
+	height:30px;
+	font-size:30px;
+	display:block;
+}
+
+.menu:hover{
+	cursor:pointer;
+}
+
+/*==============level 1==============*/
+nav li a{
+	display: block;
+	font-size:20px;
+	width:150px;
+	line-height:80px;
+	color: rgb(136, 96, 39);
+	text-decoration:none;
+	text-align:center;
+	
+}
+/*==============level 2==============*/
+nav li ul{
+	position: absolute;
+	display:none;
+	left: 0;    
+	margin: 0;
+}
+
+nav ul li:hover > ul{
+	display: block;
+}
+
+nav ul li:hover > a{ /*當選取第三層的時候，其向上的第二層會變色*/
+	color:rgba(255, 255, 255, 1);
+	background: rgba(136, 96, 39, .5);
+}
+
+nav ul ul a{
+	margin:0;   
+	color:rgba(255, 255, 255, 1);
+	background: rgba(105, 9, 146, .5);
+	z-index:2001;
+}
+
+nav ul ul a:hover{
+	color: rgb(136, 96, 39);
+	background: rgba(255, 255, 255, 1);
+	/*text-decoration-line: underline;
+	text-decoration-style: wavy;*/
+}
+
+/*==============level 3 and more==============*/
+nav ul ul li:hover > ul{
+	display: block;
+	position: absolute;
+	top: 0;    
+	left: 100%;
+}
+
+section{
+	width: 80%;
+	margin: auto;
+	-webkit-column-count: 3;
+	column-count: 3;
+
+	-webkit-column-gap: 20px;
+	column-gap: 20px;
+}
+
+.box{
+	display: inline-block;
+	box-sizing: border-box;
+	width: 100%;
+	background: rgba(255,255,255,1);
+	margin: 12px 0px 0px;
+	z-index: 10;
+	box-shadow: 2px 2px 8px rgba(173, 181, 189 ,1);
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.box:hover{
+	cursor: pointer;
+}
+
+.imgbox{
+	width: 100%;
+	overflow: hidden;
+}
+
+.box .imgbox img{
+	float: left;
+	width:100%;
+
+	-ms-transform: scale(1,1);
+	-webkit-transform: scale(1,1);
+	transform: scale(1,1);
+
+	-webkit-transition: transform 1.5s;
+	transition: transform 1.5s;
+
+	-webkit-transition-timing-function: ease-in-out;
+	transition-timing-function: ease-in-out;
+}
+
+.box:hover .imgbox img{
+	-ms-transform: scale(2,2);
+	-webkit-transform: scale(2,2);
+	transform: scale(2,2);
+}
+
+.box h3{
+	box-sizing: border-box;
+	padding: 0px 20px;
+	color: rgba(221,120,47,1);
+}
+
+.box p{
+	box-sizing: border-box;
+	padding: 0px 20px;
+	color: rgba(42,157,143,1);
+}
+
+.head{
+	display: inline-block;
+	padding: 0px 20px 20px;
+}
+
+.head img{
+	float: left;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+.head span{
+	float: left;
+	font-size: 13px;
+	color: rgba(42,157,143,1);
+	line-height: 40px;
+	margin-left: 10px;
+}
+
+aside{
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	z-index: 100000;
+}
+
+.totop{
+	width:44px;
+	height:44px;
+	background: rgba(38,70,83,1) url(../images/top2x.png) no-repeat;
+	background-size: 200%;
+	background-position: 0px 0px;
+}
+
+.totop:hover{
+	background: rgba(38,70,83,1) url(../images/top2x.png) no-repeat;
+	background-size: 200%;
+	background-position: 0px 0px;
+}
+/*footer*/
+footer{
+	padding:20px 0px;
+	text-align:center;	
+}
+/*===============rwd details===============*/
+
+/* For large */
+@media only screen and (min-width: 992px) { 
+	.ficon{
+		font-size:60px;
+	}
+
+	nav{
+		position: -webkit-sticky;
+		position: sticky;
+		top: 0;
+		z-index:2000;
+	}
+
+	nav li{
+		display: inline-block;
+		border-bottom:solid rgba(242, 242, 242, 1) 0px;
+	}
+
+	.menu{
+		display:none;
+	}
+
+	section{
+		line-height:2.5em;
+		font-size:1.1em;
+	}
+	
+}
+
+/* For m and s */
+@media only screen and (max-width: 991px) {
+	nav{
+		width:100%;
+		margin:auto;
+		text-align:center;
+		font-size:18px;
+		position: -webkit-sticky;
+		position: sticky;
+		
+	}
+
+	nav li a{
+		display: block;
+		font-size:20px;
+		width: 150px;
+		margin:auto;
+		line-height:80px;
+		color: rgb(127, 90, 37);
+		text-decoration:none;
+		text-align:center;
+		z-index:2000;
+	}
+	
+	/*若有第二第三層選單時，後面的選單z-index會越大，越上面比較好點擊*/
+	nav ul ul{
+		z-index:2001;
+	}
+
+	nav ul ul ul{
+		z-index:2002;
+	}
+
+}
+
+/*footer*/
+footer{
+	clear:both;
+	padding:20px 0px;
+	text-align:center;
+	color:rgba(201, 142, 58);
+}

@@ -1,0 +1,349 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url("rwd.css");
+
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background:rgba(242, 237, 232, 1);
+}
+
+/* header */
+header{
+	position:relative;
+	padding:15px 0px;
+	color:rgba(255, 255, 255, 1);
+	background:rgb(255, 226, 154);
+	text-align:center;
+}
+
+.ficon{
+	font-size:60px;
+	padding:5px;
+}
+
+.menu{
+	position:absolute;
+	right:20px;
+	top:20px;
+	width:30px;
+	height:30px;
+	font-size:30px;
+	display:block;
+}
+
+.menu:hover{
+	cursor:pointer;
+}
+
+nav{
+	width:100%;
+	margin:auto;
+	text-align:center;
+	font-size:18px;
+	position: -webkit-sticky;
+  	position: sticky;
+  	top: 0;
+}
+
+nav ul{
+	list-style: none;
+}
+
+nav li{
+	position:relative;
+	display: block;
+}
+
+.menu{
+	position:absolute;
+	right:20px;
+	top:20px;
+	width:30px;
+	height:30px;
+	font-size:30px;
+	display:block;
+}
+
+.menu:hover{
+	cursor:pointer;
+}
+
+/*==============level 1==============*/
+nav li a{
+	display: block;
+	font-size:20px;
+	width:150px;
+	line-height:80px;
+	color: rgb(136, 96, 39);
+	text-decoration:none;
+	text-align:center;
+	
+}
+/*==============level 2==============*/
+nav li ul{
+	position: absolute;
+	display:none;
+	left: 0;    
+	margin: 0;
+}
+
+nav ul li:hover > ul{
+	display: block;
+}
+
+nav ul li:hover > a{ /*當選取第三層的時候，其向上的第二層會變色*/
+	color:rgba(255, 255, 255, 1);
+	background: rgba(136, 96, 39, .5);
+}
+
+nav ul ul a{
+	margin:0;   
+	color:rgba(255, 255, 255, 1);
+	background: rgba(105, 9, 146, .5);
+	z-index:2001;
+}
+
+nav ul ul a:hover{
+	color: rgb(136, 96, 39);
+	background: rgba(255, 255, 255, 1);
+	/*text-decoration-line: underline;
+	text-decoration-style: wavy;*/
+}
+
+/*==============level 3 and more==============*/
+nav ul ul li:hover > ul{
+	display: block;
+	position: absolute;
+	top: 0;    
+	left: 100%;
+}
+
+/*banner*/
+.banner{
+	position: relative;
+	overflow:hidden;
+	width:100%;
+	height:500px;
+	background:url(../images/banner.jpeg) no-repeat;
+	background-size:100%;
+}
+
+.anitext{
+	position:absolute;
+	top:30%;
+	left:0%;
+	font-family: 'Courgette', cursive;
+	color:rgb(255, 255, 255);
+	font-size:10px;
+	opacity:0;
+	
+	animation-name: ant;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease;
+	animation-delay: 1s;
+	animation-direction: normal;
+	animation-fill-mode: forwards;
+	
+	-webkit-animation-name: ant; /* 動畫名稱 */
+	-webkit-animation-duration: 2s; /* 動畫時間3秒 */
+	-webkit-animation-iteration-count: 1; /* 播放次數1次 */
+	-webkit-animation-timing-function: ease; /* 動態方式漸慢開始與結束 */
+	-webkit-animation-delay: 1s; /* 1秒後播放 */
+	-webkit-animation-direction: normal; /* 動畫播放順序為順向 */
+	-webkit-animation-fill-mode: forwards; /* 動畫結束後停格於最後一格，需搭配direction */
+}
+
+@keyframes ant{
+    from   { /*第一格的設定*/
+		
+	}
+	
+    to  {
+		left:10%;
+		font-size:40px;
+		opacity:1;
+	}
+}
+
+/* section */
+section{
+	width:80%;
+	margin: auto;
+	padding:30px 0px;
+	text-align:center;
+	color:rgb(201, 142, 58);
+	line-height:2.5em;
+	font-size:1.1em;
+}
+
+section img{
+	width:100%;	
+}
+
+article{
+	float:left;
+	width:100%;
+	box-sizing:border-box;
+	margin:50px 0px 0px;
+	background:rgba(255,255,255,.5);
+}
+
+article:nth-child(2n){
+	background: rgba(255, 190, 10, .1);	
+}
+
+article .picbox, article .desbox{
+	float: left;
+	position:relative;
+	width:50%;
+	box-sizing:border-box;
+}
+
+article .desbox{
+	padding:80px;
+	line-height:2em;
+	text-align: justify;
+}
+
+.desbox h1{
+	font-family: 'Noto Serif TC', serif;
+	font-weight:900;
+	font-size:40px;
+	color:rgb(149, 105, 44);
+	line-height:2em;
+}
+
+.picbox img{
+	/* width:100%; */
+	object-fit: cover;
+	height:500px;
+}
+
+.picbox:hover img{
+	-webkit-filter: brightness(30%);
+	filter: brightness(30%);
+}
+
+.picbox:hover .fadebox{
+	opacity: 1;
+}
+
+.fadebox{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);/* IE 9 */
+	-webkit-transform: translate(-50%, -50%); /* Safari */
+	transform: translate(-50%, -50%);
+	opacity: 0;
+}
+
+.fadebox a{
+	display:block;
+	font-size:25px;
+	padding: 16px 32px;
+	color:rgba(255,255,255,1);
+	text-decoration:none;
+	background: rgb(0, 0, 0);
+}
+
+.fadebox a:hover{
+	color:rgb(0, 0, 0);
+	background: rgba(255,255,255,1);
+}
+
+h4{
+	font-family: 'Noto Serif TC', serif;
+	font-weight:900;
+	color:rgb(142, 100, 42);
+	line-height:2em;
+}
+
+
+/*footer*/
+footer{
+	padding:20px 0px;
+	text-align:center;	
+}
+
+/*===============rwd details===============*/
+
+/* For large */
+@media only screen and (min-width: 992px) { 
+	.ficon{
+		font-size:60px;
+	}
+
+	nav{
+		position: -webkit-sticky;
+		position: sticky;
+		top: 0;
+		z-index:2000;
+	}
+
+	nav li{
+		display: inline-block;
+		border-bottom:solid rgba(242, 242, 242, 1) 0px;
+	}
+
+	.menu{
+		display:none;
+	}
+
+	section{
+		line-height:2.5em;
+		font-size:1.1em;
+	}
+	
+}
+
+/* For m and s */
+@media only screen and (max-width: 991px) {
+	nav{
+		width:100%;
+		margin:auto;
+		text-align:center;
+		font-size:18px;
+		position: -webkit-sticky;
+		position: sticky;
+		
+	}
+
+	nav li a{
+		display: block;
+		font-size:20px;
+		width: 150px;
+		margin:auto;
+		line-height:80px;
+		color: rgb(127, 90, 37);
+		text-decoration:none;
+		text-align:center;
+		z-index:2000;
+	}
+	
+	/*若有第二第三層選單時，後面的選單z-index會越大，越上面比較好點擊*/
+	nav ul ul{
+		z-index:2001;
+	}
+
+	nav ul ul ul{
+		z-index:2002;
+	}
+
+}
+
+/*footer*/
+footer{
+	clear:both;
+	padding:20px 0px;
+	text-align:center;
+	color:rgba(201, 142, 58);
+}
